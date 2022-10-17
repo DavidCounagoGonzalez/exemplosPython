@@ -14,7 +14,9 @@ else:
 try:
     c = bbdd.cursor()
 
-    c.execute('''create table usuarios (dni text''')
+    c.execute('''create table usuarios (dni text,
+                                        nome text,
+                                        direccion text''')
 
 except dbapi.DatabaseError as e:
-    print("Erro na BD")
+    print("Erro na BD" + str(e))
